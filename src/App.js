@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Table, Button } from "antd";
+import { vehicleData } from "./fleetData";
+import { columns } from "./fleetData";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h2 className="header-style">Vehicle Management</h2>
       </header>
+
+      <div style={{ textAlign: `right` }}>
+        <Button shape="round" className="button">
+          +New Vehicle{" "}
+        </Button>
+      </div>
+
+      <div className="table-style">
+        <Table dataSource={vehicleData} columns={columns} />;
+      </div>
     </div>
   );
 }
